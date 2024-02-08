@@ -5,8 +5,14 @@ print("I'm thinking of a number...")
 guess = str(input("What number am I thinking of? "))
  
 while guess != number and guess != 'q' and cap != 0:
-    print("Incorret guess. Try Again!")    
-    print(f"You have {cap} Number of Guesses left!")
+    if int(guess) > int(number):
+         print("Incorret guess. You Guessed Too High!") 
+         print(f"You have {cap} Number of Guesses left!")
+    elif int(guess) < int(number):
+         print("Incorrect Guess! You Guessed Too Low!")
+         print(f"You have {cap} Number of Guesses left!")
+
+
     guess = str(input("What number am I thinking of? "))
     cap = cap-1
 
